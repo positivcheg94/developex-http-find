@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui network testlib
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -8,9 +8,18 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    httpfind.cpp
+        general.cpp \
+        thread_pool.cpp \
+        worker.cpp \
+
 
 HEADERS  += mainwindow.h \
-    httpfind.h
+        general.h \
+        thread_pool.h \
+        worker.h
+
+
 
 FORMS    += mainwindow.ui
+
+QMAKE_CXXFLAGS += -std=c++11
