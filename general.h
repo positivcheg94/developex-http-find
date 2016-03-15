@@ -35,8 +35,6 @@ struct request_status{
 struct sync_v {
     mutex m_list;
     wait_condition wc_list;
-    mutex m_table;
-    mutex m_progress;
     mutex m;
     wait_condition wc;
 };

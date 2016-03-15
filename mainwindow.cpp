@@ -3,7 +3,7 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     ui(new Ui::MainWindow),
-    int_validator(1,65535),started(false),paused(false)
+    int_validator(1,65535),paused(false)
 {
     ui->setupUi(this);
     // the buggy validator accepts 0 so w/e, not my fault, if c==0 return; inc in button slot
