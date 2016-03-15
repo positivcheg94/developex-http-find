@@ -34,15 +34,22 @@ void MainWindow::on_button_start_clicked(){
 }
 
 void MainWindow::on_button_pause_clicked(){
-    if(paused){
-        pool->unpause();
-        ui->button_pause->setText("Pause");
+    try{
+        if(paused){
+            pool->unpause();
+            ui->button_pause->setText("Pause");
+        }
+        else{
+            pool->pause();
+            ui->button_pause->setText("Unpause");
+        }
+        paused =!paused;
     }
-    else{
-        pool->pause();
-        ui->button_pause->setText("Unpause");
+    catch(QException &ex){
+        QMessageBox msg;
+        msg.setText("Do not click this before pool starts");
+        msg.exec();
     }
-    paused =!paused;
 }
 
 void MainWindow::on_button_stop_clicked()
